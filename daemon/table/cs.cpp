@@ -145,6 +145,10 @@ Cs::find(const Interest& interest,
   NFD_LOG_DEBUG("  matching " << match->getName());
   m_policy->beforeUse(match);
   hitCallback(interest, match->getData());
+
+  EntryImpl& entry = const_cast<EntryImpl&>(*match);
+
+  entry.updateStaleTime();
 }
 
 iterator

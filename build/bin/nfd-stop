@@ -1,6 +1,6 @@
 #!/bin/bash
 
-VERSION="0.5.1-62-g38c7d9e"
+VERSION="0.5.1-commit-39058f3"
 
 case "$1" in
   -h)
