@@ -1,0 +1,331 @@
+.\" Man page generated from reStructuredText.
+.
+.TH "NFDC" "1" "Apr 15, 2017" "0.5.1-62-g38c7d9e" "NFD - Named Data Networking Forwarding Daemon"
+.SH NAME
+nfdc \- show / manipulate NFD state and configuration
+.
+.nr rst2man-indent-level 0
+.
+.de1 rstReportMargin
+\\$1 \\n[an-margin]
+level \\n[rst2man-indent-level]
+level margin: \\n[rst2man-indent\\n[rst2man-indent-level]]
+-
+\\n[rst2man-indent0]
+\\n[rst2man-indent1]
+\\n[rst2man-indent2]
+..
+.de1 INDENT
+.\" .rstReportMargin pre:
+. RS \\$1
+. nr rst2man-indent\\n[rst2man-indent-level] \\n[an-margin]
+. nr rst2man-indent-level +1
+.\" .rstReportMargin post:
+..
+.de UNINDENT
+. RE
+.\" indent \\n[an-margin]
+.\" old: \\n[rst2man-indent\\n[rst2man-indent-level]]
+.nr rst2man-indent-level -1
+.\" new: \\n[rst2man-indent\\n[rst2man-indent-level]]
+.in \\n[rst2man-indent\\n[rst2man-indent-level]]u
+..
+.SH USAGE
+.INDENT 0.0
+.INDENT 3.5
+.sp
+.nf
+.ft C
+nfdc [\-h] COMMAND [<command options>]
+.ft P
+.fi
+.UNINDENT
+.UNINDENT
+.SH DESCRIPTION
+.sp
+\fBnfdc\fP is a tool to manipulate routing information base (RIB), forwarding information
+base (FIB), and StrategyChoices table (i.e., which strategy should be used by which
+namespaces).
+.SH OPTIONS
+.INDENT 0.0
+.TP
+.B \fB\-h\fP
+Print usage information.
+.UNINDENT
+.sp
+\fBCOMMAND\fP
+.INDENT 0.0
+.INDENT 3.5
+.INDENT 0.0
+.TP
+.B \fBregister\fP
+Register a new or update existing routing entry in Routing Information Base (RIB).
+.sp
+\fBregister [\-I] [\-C] [\-c <cost>] [\-e expiration time] [\-o origin] <prefix> <faceId | faceUri>\fP
+.INDENT 7.0
+.INDENT 3.5
+.INDENT 0.0
+.TP
+.B \fB\-I\fP
+Unset CHILD_INHERIT flag from the routing entry.
+.TP
+.B \fB\-C\fP
+Set CAPTURE flag in the routing entry.
+.TP
+.B \fB\-c <cost>\fP
+Cost for the RIB entry (default is 0).
+.TP
+.B \fB\-e <expiration time>\fP
+Expiration time of the RIB entry in milliseconds. If not specified, the entry remains in FIB
+for the lifetime of the associated face.
+.TP
+.B \fB\-o <origin>\fP
+Origin of the registration request (default is 255).
+0 for Local producer applications, 128 for NLSR, 255 for static routes.
+.TP
+.B \fBprefix\fP
+A prefix of an existing or to be created RIB entry, for which routing entry is
+requested to be added or updated.
+.TP
+.B \fBfaceId\fP
+An existing NFD Face ID number, which can be obtained, for example, using
+\fBnfd\-status\fP command.
+.TP
+.B \fBfaceUri\fP
+URI of the existing or to be created Face.
+.UNINDENT
+.UNINDENT
+.UNINDENT
+.TP
+.B \fBunregister\fP
+Unregister an existing routing entry from Routing Information Base (RIB).
+.sp
+\fBunregister [\-o origin] <prefix> <faceId>\fP
+.INDENT 7.0
+.INDENT 3.5
+.INDENT 0.0
+.TP
+.B \fB\-o <origin>\fP
+Origin of the unregistration request (default is 255).
+.TP
+.B \fBprefix\fP
+A prefix of an existing RIB entry, from which routing entry is requested to be
+removed.
+.TP
+.B \fBfaceId\fP
+An existing NFD Face ID number, which can be obtained, for example, using
+\fBnfd\-status\fP command.
+.UNINDENT
+.UNINDENT
+.UNINDENT
+.TP
+.B \fBcreate\fP
+Create a UDP unicast or TCP Face
+.sp
+\fBcreate [\-P] <faceUri>\fP
+.INDENT 7.0
+.INDENT 3.5
+.INDENT 0.0
+.TP
+.B \fB\-P\fP
+create permanent (instead of persistent) face:
+.sp
+\fBNOTE:\fP
+.INDENT 7.0
+.INDENT 3.5
+Persistent (default) faces remain open until they are explicitly destroyed or
+there is a transport failure.  Permanent faces remain open until they are
+explicitly destroyed; any transport failures will be recovered internally.
+.UNINDENT
+.UNINDENT
+.TP
+.B \fBfaceUri\fP
+UDP unicast or TCP Face URI:
+.INDENT 7.0
+.INDENT 3.5
+.sp
+.nf
+.ft C
+UDP unicast:    udp[4|6]://<remote\-IP\-or\-host>[:<remote\-port>]
+TCP:            tcp[4|6]://<remote\-IP\-or\-host>[:<remote\-port>]
+.ft P
+.fi
+.UNINDENT
+.UNINDENT
+.UNINDENT
+.UNINDENT
+.UNINDENT
+.TP
+.B \fBdestroy\fP
+Create an existing UDP unicast or TCP Face.
+.sp
+\fBdestroy <faceId | faceUri>\fP
+.INDENT 7.0
+.INDENT 3.5
+.INDENT 0.0
+.TP
+.B \fBfaceId\fP
+An existing NFD Face ID number, which can be obtained, for example, using
+\fBnfd\-status\fP command.
+.TP
+.B \fBfaceUri\fP
+UDP unicast or TCP Face URI:
+.INDENT 7.0
+.INDENT 3.5
+.sp
+.nf
+.ft C
+UDP unicast:    udp[4|6]://<remote\-IP\-or\-host>[:<remote\-port>]
+TCP:            tcp[4|6]://<remote\-IP\-or\-host>[:<remote\-port>]
+.ft P
+.fi
+.UNINDENT
+.UNINDENT
+.UNINDENT
+.UNINDENT
+.UNINDENT
+.TP
+.B \fBset\-strategy\fP
+Select strategy to be used for the specified namespace
+.sp
+\fBset\-strategy <namespace> <strategy\-name>\fP
+.INDENT 7.0
+.INDENT 3.5
+.INDENT 0.0
+.TP
+.B \fBnamespace\fP
+Namespace that will use the specified strategy.
+.sp
+Note that more specific namespace(s) can use different strategy or strategies.
+For example, if namespace \fB/A/B/C\fP was using strategy
+\fBndn:/localhost/nfd/strategy/best\-route\fP before running \fBset\-strategy\fP on
+\fB/A\fP namespace, it will continue using the same strategy no matter which
+namespace was specified for \fB/A\fP\&.
+.TP
+.B \fBstrategy\-name\fP
+Name of one of the available strategies.
+.sp
+Currently, NFD supports the following strategies:
+.INDENT 7.0
+.INDENT 3.5
+.sp
+.nf
+.ft C
+ndn:/localhost/nfd/strategy/best\-route
+ndn:/localhost/nfd/strategy/multicast
+ndn:/localhost/nfd/strategy/client\-control
+ndn:/localhost/nfd/strategy/ncc
+ndn:/localhost/nfd/strategy/access
+.ft P
+.fi
+.UNINDENT
+.UNINDENT
+.UNINDENT
+.UNINDENT
+.UNINDENT
+.TP
+.B \fBunset\-strategy\fP
+Unset the strategy for a given \fBnamespace\fP\&.
+.sp
+Effectively, this command select parent\(aqs namespace strategy to be used for the
+specified \fBnamespace\fP\&.
+.sp
+\fBunset\-strategy <namespace>\fP
+.INDENT 7.0
+.INDENT 3.5
+.INDENT 0.0
+.TP
+.B \fBnamespace\fP
+Namespace from which namespace customization should be removed.
+.UNINDENT
+.UNINDENT
+.UNINDENT
+.TP
+.B \fBadd\-nexthop\fP
+Directly add nexthop entry info NFD\(aqs Forwarding Information Base (FIB).  This command
+is intended only for debugging purposes.  Normally, prefix\-nexhop association should
+be registered in Routing Information Base using \fBregister\fP command.
+.sp
+\fBadd\-nexthop [\-c <cost>] <prefix> <faceId | faceUri>\fP
+.INDENT 7.0
+.INDENT 3.5
+.INDENT 0.0
+.TP
+.B \fB\-c <cost>\fP
+Cost for the nexthop entry to be inserted (default is 0).
+.TP
+.B \fBprefix\fP
+A prefix of an existing or to be created FIB entry, to which nexthop
+entry is requested to be added.
+.TP
+.B \fBfaceId\fP
+An existing NFD Face ID number, which can be obtained, for example, using
+\fBnfd\-status\fP command
+.TP
+.B \fBfaceUri\fP
+URI of the existing or to be created Face.
+.UNINDENT
+.UNINDENT
+.UNINDENT
+.TP
+.B \fBremove\-nexthop\fP
+Directly remove nexthop entry from NFD\(aqS FIB.  This command
+is intended only for debugging purposes.  Normally, prefix\-nexhop association should
+be unregistered from Routing Information Base using \fBunregister\fP command.
+.sp
+\fBremove\-nexthop <prefix> <faceId>\fP
+.INDENT 7.0
+.INDENT 3.5
+.INDENT 0.0
+.TP
+.B \fBprefix\fP
+A prefix of an existing FIB entry, from which nexthop entry is requested to be removed.
+.TP
+.B \fBfaceId\fP
+An existing NFD Face ID number, which can be obtained, for example, using
+\fBnfd\-status\fP command.
+.sp
+Note that when \fBfaceId\fP is the last Face associated with \fBprefix\fP FIB entry,
+the whole FIB entry will be removed.
+.UNINDENT
+.UNINDENT
+.UNINDENT
+.UNINDENT
+.UNINDENT
+.UNINDENT
+.SH EXIT CODES
+.sp
+0: Success
+.sp
+1: An unspecified error occurred
+.sp
+2: Malformed command line
+.SH EXAMPLES
+.sp
+Add a namespace to a face uri:
+.INDENT 0.0
+.INDENT 3.5
+.sp
+.nf
+.ft C
+nfdc register ndn:/app1/video udp://192.168.1.2
+.ft P
+.fi
+.UNINDENT
+.UNINDENT
+.sp
+Set strategy to a name:
+.INDENT 0.0
+.INDENT 3.5
+.sp
+.nf
+.ft C
+nfdc set\-strategy ndn:/app1/video ndn:/localhost/nfd/strategy/broadcast
+.ft P
+.fi
+.UNINDENT
+.UNINDENT
+.SH COPYRIGHT
+2014-2016, Named Data Networking Project
+.\" Generated by docutils manpage writer.
+.

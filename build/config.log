@@ -1,0 +1,561 @@
+# project nfd (0.5.1) configured on Sat Apr 15 00:22:05 2017 by
+# waf 1.8.9 (abi 98, python 2070df0 on darwin)
+# using ./waf configure
+#
+----------------------------------------
+Setting top to
+/Users/Mocca/Desktop/NFD
+----------------------------------------
+Setting out to
+/Users/Mocca/Desktop/NFD/build
+----------------------------------------
+Checking for 'clang++' (C++ compiler)
+find program=['clang++'] paths=['/opt/local/bin', '/opt/local/sbin', '/opt/local/bin', '/opt/local/sbin', '/usr/local/bin', '/usr/bin', '/bin', '/usr/sbin', '/sbin', '/opt/X11/bin'] var='CXX' -> ['/usr/bin/clang++']
+find program=['ar'] paths=['/opt/local/bin', '/opt/local/sbin', '/opt/local/bin', '/opt/local/sbin', '/usr/local/bin', '/usr/bin', '/bin', '/usr/sbin', '/sbin', '/opt/X11/bin'] var='AR' -> ['/usr/bin/ar']
+/usr/bin/clang++
+----------------------------------------
+Checking supported CXXFLAGS
+==>
+
+int main(int argc, char **argv) {
+	(void)argc; (void)argv;
+	return 0;
+}
+
+<==
+[1/2] Compiling [32mbuild/.conf_check_655fdc46f51ef5459c990c459152a36e/test.cpp[0m
+
+['/usr/bin/clang++', '-Werror', '-std=c++11', '../test.cpp', '-c', '-o', '/Users/Mocca/Desktop/NFD/build/.conf_check_655fdc46f51ef5459c990c459152a36e/testbuild/test.cpp.1.o']
+[2/2] Linking [33mbuild/.conf_check_655fdc46f51ef5459c990c459152a36e/testbuild/testprog[0m
+
+['/usr/bin/clang++', 'test.cpp.1.o', '-o', '/Users/Mocca/Desktop/NFD/build/.conf_check_655fdc46f51ef5459c990c459152a36e/testbuild/testprog']
+==>
+
+int main(int argc, char **argv) {
+	(void)argc; (void)argv;
+	return 0;
+}
+
+<==
+[1/2] Compiling [32mbuild/.conf_check_32fa7407650148267444d9272ccc7bd1/test.cpp[0m
+
+['/usr/bin/clang++', '-Werror', '-stdlib=libc++', '../test.cpp', '-c', '-o', '/Users/Mocca/Desktop/NFD/build/.conf_check_32fa7407650148267444d9272ccc7bd1/testbuild/test.cpp.1.o']
+[2/2] Linking [33mbuild/.conf_check_32fa7407650148267444d9272ccc7bd1/testbuild/testprog[0m
+
+['/usr/bin/clang++', 'test.cpp.1.o', '-o', '/Users/Mocca/Desktop/NFD/build/.conf_check_32fa7407650148267444d9272ccc7bd1/testbuild/testprog']
+-std=c++11 -stdlib=libc++
+----------------------------------------
+Checking supported LINKFLAGS
+==>
+
+int main(int argc, char **argv) {
+	(void)argc; (void)argv;
+	return 0;
+}
+
+<==
+[1/2] Compiling [32mbuild/.conf_check_7ca7769a246dcca650507fea61f5ce80/test.cpp[0m
+
+['/usr/bin/clang++', '-std=c++11', '-stdlib=libc++', '../test.cpp', '-c', '-o', '/Users/Mocca/Desktop/NFD/build/.conf_check_7ca7769a246dcca650507fea61f5ce80/testbuild/test.cpp.1.o']
+[2/2] Linking [33mbuild/.conf_check_7ca7769a246dcca650507fea61f5ce80/testbuild/testprog[0m
+
+['/usr/bin/clang++', '-Werror', '-stdlib=libc++', 'test.cpp.1.o', '-o', '/Users/Mocca/Desktop/NFD/build/.conf_check_7ca7769a246dcca650507fea61f5ce80/testbuild/testprog']
+-stdlib=libc++
+----------------------------------------
+Checking supported CXXFLAGS
+==>
+
+int main(int argc, char **argv) {
+	(void)argc; (void)argv;
+	return 0;
+}
+
+<==
+[1/2] Compiling [32mbuild/.conf_check_e0922f139643bcd3a4a9693dcd294e73/test.cpp[0m
+
+['/usr/bin/clang++', '-std=c++11', '-stdlib=libc++', '-Werror', '-O2', '../test.cpp', '-c', '-o', '/Users/Mocca/Desktop/NFD/build/.conf_check_e0922f139643bcd3a4a9693dcd294e73/testbuild/test.cpp.1.o']
+[2/2] Linking [33mbuild/.conf_check_e0922f139643bcd3a4a9693dcd294e73/testbuild/testprog[0m
+
+['/usr/bin/clang++', '-stdlib=libc++', 'test.cpp.1.o', '-o', '/Users/Mocca/Desktop/NFD/build/.conf_check_e0922f139643bcd3a4a9693dcd294e73/testbuild/testprog']
+==>
+
+int main(int argc, char **argv) {
+	(void)argc; (void)argv;
+	return 0;
+}
+
+<==
+[1/2] Compiling [32mbuild/.conf_check_584429c91a84d81034c16f41374ad16c/test.cpp[0m
+
+['/usr/bin/clang++', '-std=c++11', '-stdlib=libc++', '-Werror', '-g', '../test.cpp', '-c', '-o', '/Users/Mocca/Desktop/NFD/build/.conf_check_584429c91a84d81034c16f41374ad16c/testbuild/test.cpp.1.o']
+[2/2] Linking [33mbuild/.conf_check_584429c91a84d81034c16f41374ad16c/testbuild/testprog[0m
+
+['/usr/bin/clang++', '-stdlib=libc++', 'test.cpp.1.o', '-o', '/Users/Mocca/Desktop/NFD/build/.conf_check_584429c91a84d81034c16f41374ad16c/testbuild/testprog']
+==>
+
+int main(int argc, char **argv) {
+	(void)argc; (void)argv;
+	return 0;
+}
+
+<==
+[1/2] Compiling [32mbuild/.conf_check_82be783c4be4a6db256c8936d268bdd1/test.cpp[0m
+
+['/usr/bin/clang++', '-std=c++11', '-stdlib=libc++', '-Werror', '-pedantic', '../test.cpp', '-c', '-o', '/Users/Mocca/Desktop/NFD/build/.conf_check_82be783c4be4a6db256c8936d268bdd1/testbuild/test.cpp.1.o']
+[2/2] Linking [33mbuild/.conf_check_82be783c4be4a6db256c8936d268bdd1/testbuild/testprog[0m
+
+['/usr/bin/clang++', '-stdlib=libc++', 'test.cpp.1.o', '-o', '/Users/Mocca/Desktop/NFD/build/.conf_check_82be783c4be4a6db256c8936d268bdd1/testbuild/testprog']
+==>
+
+int main(int argc, char **argv) {
+	(void)argc; (void)argv;
+	return 0;
+}
+
+<==
+[1/2] Compiling [32mbuild/.conf_check_0130f6d2dc89e8f076b1e83d92b19338/test.cpp[0m
+
+['/usr/bin/clang++', '-std=c++11', '-stdlib=libc++', '-Werror', '-Wall', '../test.cpp', '-c', '-o', '/Users/Mocca/Desktop/NFD/build/.conf_check_0130f6d2dc89e8f076b1e83d92b19338/testbuild/test.cpp.1.o']
+[2/2] Linking [33mbuild/.conf_check_0130f6d2dc89e8f076b1e83d92b19338/testbuild/testprog[0m
+
+['/usr/bin/clang++', '-stdlib=libc++', 'test.cpp.1.o', '-o', '/Users/Mocca/Desktop/NFD/build/.conf_check_0130f6d2dc89e8f076b1e83d92b19338/testbuild/testprog']
+==>
+
+int main(int argc, char **argv) {
+	(void)argc; (void)argv;
+	return 0;
+}
+
+<==
+[1/2] Compiling [32mbuild/.conf_check_947060525a7515fa592dfcf848646af0/test.cpp[0m
+
+['/usr/bin/clang++', '-std=c++11', '-stdlib=libc++', '-Werror', '-Wextra', '../test.cpp', '-c', '-o', '/Users/Mocca/Desktop/NFD/build/.conf_check_947060525a7515fa592dfcf848646af0/testbuild/test.cpp.1.o']
+[2/2] Linking [33mbuild/.conf_check_947060525a7515fa592dfcf848646af0/testbuild/testprog[0m
+
+['/usr/bin/clang++', '-stdlib=libc++', 'test.cpp.1.o', '-o', '/Users/Mocca/Desktop/NFD/build/.conf_check_947060525a7515fa592dfcf848646af0/testbuild/testprog']
+==>
+
+int main(int argc, char **argv) {
+	(void)argc; (void)argv;
+	return 0;
+}
+
+<==
+[1/2] Compiling [32mbuild/.conf_check_c48a1140cbf0481f7dac21c84bb65f61/test.cpp[0m
+
+['/usr/bin/clang++', '-std=c++11', '-stdlib=libc++', '-Werror', '-Wno-unused-parameter', '../test.cpp', '-c', '-o', '/Users/Mocca/Desktop/NFD/build/.conf_check_c48a1140cbf0481f7dac21c84bb65f61/testbuild/test.cpp.1.o']
+[2/2] Linking [33mbuild/.conf_check_c48a1140cbf0481f7dac21c84bb65f61/testbuild/testprog[0m
+
+['/usr/bin/clang++', '-stdlib=libc++', 'test.cpp.1.o', '-o', '/Users/Mocca/Desktop/NFD/build/.conf_check_c48a1140cbf0481f7dac21c84bb65f61/testbuild/testprog']
+==>
+
+int main(int argc, char **argv) {
+	(void)argc; (void)argv;
+	return 0;
+}
+
+<==
+[1/2] Compiling [32mbuild/.conf_check_c46d5cd0f3e035a39f04ea4db8e84a14/test.cpp[0m
+
+['/usr/bin/clang++', '-std=c++11', '-stdlib=libc++', '-Werror', '-fcolor-diagnostics', '../test.cpp', '-c', '-o', '/Users/Mocca/Desktop/NFD/build/.conf_check_c46d5cd0f3e035a39f04ea4db8e84a14/testbuild/test.cpp.1.o']
+[2/2] Linking [33mbuild/.conf_check_c46d5cd0f3e035a39f04ea4db8e84a14/testbuild/testprog[0m
+
+['/usr/bin/clang++', '-stdlib=libc++', 'test.cpp.1.o', '-o', '/Users/Mocca/Desktop/NFD/build/.conf_check_c46d5cd0f3e035a39f04ea4db8e84a14/testbuild/testprog']
+==>
+
+int main(int argc, char **argv) {
+	(void)argc; (void)argv;
+	return 0;
+}
+
+<==
+[1/2] Compiling [32mbuild/.conf_check_d4c1c20fb41a92e7a759108cf720bd31/test.cpp[0m
+
+['/usr/bin/clang++', '-std=c++11', '-stdlib=libc++', '-Werror', '-Wno-unused-local-typedef', '../test.cpp', '-c', '-o', '/Users/Mocca/Desktop/NFD/build/.conf_check_d4c1c20fb41a92e7a759108cf720bd31/testbuild/test.cpp.1.o']
+[2/2] Linking [33mbuild/.conf_check_d4c1c20fb41a92e7a759108cf720bd31/testbuild/testprog[0m
+
+['/usr/bin/clang++', '-stdlib=libc++', 'test.cpp.1.o', '-o', '/Users/Mocca/Desktop/NFD/build/.conf_check_d4c1c20fb41a92e7a759108cf720bd31/testbuild/testprog']
+-O2 -g -pedantic -Wall -Wextra -Wno-unused-parameter -fcolor-diagnostics -Wno-unused-local-typedef
+----------------------------------------
+Checking for std::is_move_constructible
+==>
+
+#include <type_traits>
+static_assert(std::is_move_constructible<int>::value, "");
+
+<==
+[1/1] Compiling [32mbuild/.conf_check_a4e620e7c88e0bf75be03e9d6f640cda/test.cpp[0m
+
+['/usr/bin/clang++', '-O2', '-g', '-pedantic', '-Wall', '-Wextra', '-Wno-unused-parameter', '-fcolor-diagnostics', '-Wno-unused-local-typedef', '-std=c++11', '-stdlib=libc++', '-DNDEBUG', '../test.cpp', '-c', '-o', '/Users/Mocca/Desktop/NFD/build/.conf_check_a4e620e7c88e0bf75be03e9d6f640cda/testbuild/test.cpp.1.o']
+yes
+----------------------------------------
+Checking for program 'doxygen'
+/opt/local/bin/doxygen
+find program=['doxygen'] paths=['/opt/local/bin', '/opt/local/sbin', '/opt/local/bin', '/opt/local/sbin', '/usr/local/bin', '/usr/bin', '/bin', '/usr/sbin', '/sbin', '/opt/X11/bin'] var='DOXYGEN' -> ['/opt/local/bin/doxygen']
+----------------------------------------
+Checking for program 'tar'
+/usr/bin/tar
+find program=['tar'] paths=['/opt/local/bin', '/opt/local/sbin', '/opt/local/bin', '/opt/local/sbin', '/usr/local/bin', '/usr/bin', '/bin', '/usr/sbin', '/sbin', '/opt/X11/bin'] var='TAR' -> ['/usr/bin/tar']
+----------------------------------------
+Checking for program 'sphinx-build'
+/opt/local/bin/sphinx-build
+find program=['sphinx-build'] paths=['/opt/local/bin', '/opt/local/sbin', '/opt/local/bin', '/opt/local/sbin', '/usr/local/bin', '/usr/bin', '/bin', '/usr/sbin', '/sbin', '/opt/X11/bin'] var='SPHINX_BUILD' -> ['/opt/local/bin/sphinx-build']
+----------------------------------------
+Checking for program 'bash'
+/bin/bash
+find program=['bash'] paths=['/opt/local/bin', '/opt/local/sbin', '/opt/local/bin', '/opt/local/sbin', '/usr/local/bin', '/usr/bin', '/bin', '/usr/sbin', '/sbin', '/opt/X11/bin'] var='BASH' -> ['/bin/bash']
+----------------------------------------
+Checking for program 'pkg-config'
+/opt/local/bin/pkg-config
+find program=['pkg-config'] paths=['/opt/local/bin', '/opt/local/sbin', '/opt/local/bin', '/opt/local/sbin', '/usr/local/bin', '/usr/bin', '/bin', '/usr/sbin', '/sbin', '/opt/X11/bin'] var='PKGCONFIG' -> ['/opt/local/bin/pkg-config']
+----------------------------------------
+Checking for 'libndn-cxx'
+['/opt/local/bin/pkg-config', '--cflags', '--libs', 'libndn-cxx']
+out: -I/usr/local/include -I/opt/local/include -I/usr/local/include -L/usr/local/lib -L/opt/local/lib -L/usr/local/lib -lndn-cxx -lboost_system-mt -lboost_filesystem-mt -lboost_date_time-mt -lboost_iostreams-mt -lboost_regex-mt -lboost_program_options-mt -lboost_chrono-mt -lboost_thread-mt -lboost_log-mt -lboost_log_setup-mt -lcryptopp -lssl -lcrypto -lsqlite3 -lpthread -framework CoreFoundation -framework Security
+
+yes
+----------------------------------------
+Checking for librt library
+==>
+
+int main(int argc, char **argv) {
+	(void)argc; (void)argv;
+	return 0;
+}
+
+<==
+[1/2] Compiling [32mbuild/.conf_check_7484468a38914dff5629fa07560a484b/test.cpp[0m
+
+['/usr/bin/clang++', '-O2', '-g', '-pedantic', '-Wall', '-Wextra', '-Wno-unused-parameter', '-fcolor-diagnostics', '-Wno-unused-local-typedef', '-std=c++11', '-stdlib=libc++', '-DNDEBUG', '-DHAVE_IS_MOVE_CONSTRUCTIBLE=1', '../test.cpp', '-c', '-o', '/Users/Mocca/Desktop/NFD/build/.conf_check_7484468a38914dff5629fa07560a484b/testbuild/test.cpp.1.o']
+[2/2] Linking [33mbuild/.conf_check_7484468a38914dff5629fa07560a484b/testbuild/testprog[0m
+
+['/usr/bin/clang++', '-stdlib=libc++', 'test.cpp.1.o', '-o', '/Users/Mocca/Desktop/NFD/build/.conf_check_7484468a38914dff5629fa07560a484b/testbuild/testprog', '-lrt']
+err: ld: library not found for -lrt
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+
+from /Users/Mocca/Desktop/NFD: Test does not build: Traceback (most recent call last):
+  File "/Users/Mocca/Desktop/NFD/.waf-1.8.9-8a9ccbc1c5d3936b0b08e972e4883a9a/waflib/Configure.py", line 343, in run_build
+    bld.compile()
+  File "/Users/Mocca/Desktop/NFD/.waf-1.8.9-8a9ccbc1c5d3936b0b08e972e4883a9a/waflib/Build.py", line 184, in compile
+    raise Errors.BuildError(self.producer.error)
+BuildError: Build failed
+ -> task in 'testprog' failed (exit status 1): 
+	{task 4461795600: cxxprogram test.cpp.1.o -> testprog}
+['/usr/bin/clang++', '-stdlib=libc++', 'test.cpp.1.o', '-o', '/Users/Mocca/Desktop/NFD/build/.conf_check_7484468a38914dff5629fa07560a484b/testbuild/testprog', '-lrt']
+
+not found
+from /Users/Mocca/Desktop/NFD: The configuration failed
+----------------------------------------
+Checking for libresolv library
+==>
+
+int main(int argc, char **argv) {
+	(void)argc; (void)argv;
+	return 0;
+}
+
+<==
+[1/2] Compiling [32mbuild/.conf_check_62be1b9e6559b207fc6b0fcdee117cb9/test.cpp[0m
+
+['/usr/bin/clang++', '-O2', '-g', '-pedantic', '-Wall', '-Wextra', '-Wno-unused-parameter', '-fcolor-diagnostics', '-Wno-unused-local-typedef', '-std=c++11', '-stdlib=libc++', '-DNDEBUG', '-DHAVE_IS_MOVE_CONSTRUCTIBLE=1', '../test.cpp', '-c', '-o', '/Users/Mocca/Desktop/NFD/build/.conf_check_62be1b9e6559b207fc6b0fcdee117cb9/testbuild/test.cpp.1.o']
+[2/2] Linking [33mbuild/.conf_check_62be1b9e6559b207fc6b0fcdee117cb9/testbuild/testprog[0m
+
+['/usr/bin/clang++', '-stdlib=libc++', 'test.cpp.1.o', '-o', '/Users/Mocca/Desktop/NFD/build/.conf_check_62be1b9e6559b207fc6b0fcdee117cb9/testbuild/testprog', '-lresolv']
+yes
+-------------------------------------------------
+Checking if privilege drop/elevation is supported
+==>
+
+#include <unistd.h>
+#include <pwd.h>
+#include <grp.h>
+int
+main(int, char**)
+{
+  char buffer[100];
+  ::sysconf(_SC_GETGR_R_SIZE_MAX);
+  group grp;
+  group* grpRes;
+  getgrnam_r("nogroup", &grp, buffer, 100, &grpRes);
+  passwd pwd;
+  passwd* pwdRes;
+  getpwnam_r("nobody", &pwd, buffer, 100, &pwdRes);
+
+  int ret = setegid(grp.gr_gid);
+  ret = seteuid(pwd.pw_uid);
+  (void)(ret);
+
+  getegid();
+  geteuid();
+  return 0;
+}
+
+<==
+[1/2] Compiling [32mbuild/.conf_check_89c7ce047cc157e9465beaed0017fc0d/test.cpp[0m
+
+['/usr/bin/clang++', '-O2', '-g', '-pedantic', '-Wall', '-Wextra', '-Wno-unused-parameter', '-fcolor-diagnostics', '-Wno-unused-local-typedef', '-std=c++11', '-stdlib=libc++', '-DNDEBUG', '-DHAVE_IS_MOVE_CONSTRUCTIBLE=1', '-DHAVE_LIBRESOLV=1', '../test.cpp', '-c', '-o', '/Users/Mocca/Desktop/NFD/build/.conf_check_89c7ce047cc157e9465beaed0017fc0d/testbuild/test.cpp.1.o']
+[2/2] Linking [33mbuild/.conf_check_89c7ce047cc157e9465beaed0017fc0d/testbuild/testprog[0m
+
+['/usr/bin/clang++', '-stdlib=libc++', 'test.cpp.1.o', '-o', '/Users/Mocca/Desktop/NFD/build/.conf_check_89c7ce047cc157e9465beaed0017fc0d/testbuild/testprog']
+yes
+-------------------------------------------------
+Checking for header ifaddrs.h
+==>
+#include <ifaddrs.h>
+
+int main(int argc, char **argv) {
+	(void)argc; (void)argv;
+	return 0;
+}
+
+<==
+[1/2] Compiling [32mbuild/.conf_check_5f0b3bba3802ebed07fd88777afea345/test.cpp[0m
+
+['/usr/bin/clang++', '-O2', '-g', '-pedantic', '-Wall', '-Wextra', '-Wno-unused-parameter', '-fcolor-diagnostics', '-Wno-unused-local-typedef', '-std=c++11', '-stdlib=libc++', '-DNDEBUG', '-DHAVE_IS_MOVE_CONSTRUCTIBLE=1', '-DHAVE_LIBRESOLV=1', '-DHAVE_PRIVILEGE_DROP_AND_ELEVATE=1', '../test.cpp', '-c', '-o', '/Users/Mocca/Desktop/NFD/build/.conf_check_5f0b3bba3802ebed07fd88777afea345/testbuild/test.cpp.1.o']
+[2/2] Linking [33mbuild/.conf_check_5f0b3bba3802ebed07fd88777afea345/testbuild/testprog[0m
+
+['/usr/bin/clang++', '-stdlib=libc++', 'test.cpp.1.o', '-o', '/Users/Mocca/Desktop/NFD/build/.conf_check_5f0b3bba3802ebed07fd88777afea345/testbuild/testprog']
+yes
+-------------------------------------------------
+Checking for header valgrind/valgrind.h
+==>
+#include <valgrind/valgrind.h>
+
+int main(int argc, char **argv) {
+	(void)argc; (void)argv;
+	return 0;
+}
+
+<==
+[1/2] Compiling [32mbuild/.conf_check_d5a9c19b8c2684d7ff074a5f911f6fb2/test.cpp[0m
+
+['/usr/bin/clang++', '-O2', '-g', '-pedantic', '-Wall', '-Wextra', '-Wno-unused-parameter', '-fcolor-diagnostics', '-Wno-unused-local-typedef', '-std=c++11', '-stdlib=libc++', '-DNDEBUG', '-DHAVE_IS_MOVE_CONSTRUCTIBLE=1', '-DHAVE_LIBRESOLV=1', '-DHAVE_PRIVILEGE_DROP_AND_ELEVATE=1', '-DHAVE_IFADDRS_H=1', '../test.cpp', '-c', '-o', '/Users/Mocca/Desktop/NFD/build/.conf_check_d5a9c19b8c2684d7ff074a5f911f6fb2/testbuild/test.cpp.1.o']
+err: [1m../test.cpp:1:10: [0m[0;1;31mfatal error: [0m[1m'valgrind/valgrind.h' file not found[0m
+#include <valgrind/valgrind.h>
+[0;1;32m         ^
+[0m1 error generated.
+
+from /Users/Mocca/Desktop/NFD: Test does not build: Traceback (most recent call last):
+  File "/Users/Mocca/Desktop/NFD/.waf-1.8.9-8a9ccbc1c5d3936b0b08e972e4883a9a/waflib/Configure.py", line 343, in run_build
+    bld.compile()
+  File "/Users/Mocca/Desktop/NFD/.waf-1.8.9-8a9ccbc1c5d3936b0b08e972e4883a9a/waflib/Build.py", line 184, in compile
+    raise Errors.BuildError(self.producer.error)
+BuildError: Build failed
+ -> task in 'testprog' failed (exit status 1): 
+	{task 4463571856: cxx test.cpp -> test.cpp.1.o}
+['/usr/bin/clang++', '-O2', '-g', '-pedantic', '-Wall', '-Wextra', '-Wno-unused-parameter', '-fcolor-diagnostics', '-Wno-unused-local-typedef', '-std=c++11', '-stdlib=libc++', '-DNDEBUG', '-DHAVE_IS_MOVE_CONSTRUCTIBLE=1', '-DHAVE_LIBRESOLV=1', '-DHAVE_PRIVILEGE_DROP_AND_ELEVATE=1', '-DHAVE_IFADDRS_H=1', '../test.cpp', '-c', '-o', '/Users/Mocca/Desktop/NFD/build/.conf_check_d5a9c19b8c2684d7ff074a5f911f6fb2/testbuild/test.cpp.1.o']
+
+not found
+from /Users/Mocca/Desktop/NFD: The configuration failed
+-------------------------------------------------
+Checking boost includes
+1.59.0
+-------------------------------------------------
+Checking boost libs
+Found the boost path in /opt/local/lib with the libraries:
+    /opt/local/lib/libboost_atomic-mt.dylib
+    /opt/local/lib/libboost_chrono-mt.a
+    /opt/local/lib/libboost_chrono-mt.dylib
+    /opt/local/lib/libboost_container-mt.dylib
+    /opt/local/lib/libboost_context-mt.dylib
+    /opt/local/lib/libboost_coroutine-mt.dylib
+    /opt/local/lib/libboost_date_time-mt.dylib
+    /opt/local/lib/libboost_exception-mt.a
+    /opt/local/lib/libboost_filesystem-mt.dylib
+    /opt/local/lib/libboost_graph-mt.dylib
+    /opt/local/lib/libboost_iostreams-mt.dylib
+    /opt/local/lib/libboost_locale-mt.dylib
+    /opt/local/lib/libboost_log-mt.dylib
+    /opt/local/lib/libboost_log_setup-mt.dylib
+    /opt/local/lib/libboost_math_c99-mt.dylib
+    /opt/local/lib/libboost_math_c99f-mt.dylib
+    /opt/local/lib/libboost_math_c99l-mt.dylib
+    /opt/local/lib/libboost_math_tr1-mt.dylib
+    /opt/local/lib/libboost_math_tr1f-mt.dylib
+    /opt/local/lib/libboost_math_tr1l-mt.dylib
+    /opt/local/lib/libboost_prg_exec_monitor-mt.dylib
+    /opt/local/lib/libboost_program_options-mt.dylib
+    /opt/local/lib/libboost_python-mt.dylib
+    /opt/local/lib/libboost_random-mt.dylib
+    /opt/local/lib/libboost_regex-mt.dylib
+    /opt/local/lib/libboost_serialization-mt.dylib
+    /opt/local/lib/libboost_signals-mt.dylib
+    /opt/local/lib/libboost_system-mt.a
+    /opt/local/lib/libboost_system-mt.dylib
+    /opt/local/lib/libboost_test_exec_monitor-mt.a
+    /opt/local/lib/libboost_thread-mt.dylib
+    /opt/local/lib/libboost_timer-mt.a
+    /opt/local/lib/libboost_timer-mt.dylib
+    /opt/local/lib/libboost_unit_test_framework-mt.dylib
+    /opt/local/lib/libboost_wave-mt.dylib
+    /opt/local/lib/libboost_wserialization-mt.dylib
+Trying pattern boost_system(-xgcc[0-9]{0,3})-mt-1_59.dylib$
+Trying pattern boost_system-mt-1_59.dylib$
+Trying pattern boost_system(-xgcc[0-9]{0,3})-mt.dylib$
+Trying pattern boost_system-mt.dylib$
+Found boost lib libboost_system-mt.dylib
+Trying pattern boost_chrono(-xgcc[0-9]{0,3})-mt-1_59.dylib$
+Trying pattern boost_chrono-mt-1_59.dylib$
+Trying pattern boost_chrono(-xgcc[0-9]{0,3})-mt.dylib$
+Trying pattern boost_chrono-mt.dylib$
+Found boost lib libboost_chrono-mt.dylib
+Trying pattern boost_program_options(-xgcc[0-9]{0,3})-mt-1_59.dylib$
+Trying pattern boost_program_options-mt-1_59.dylib$
+Trying pattern boost_program_options(-xgcc[0-9]{0,3})-mt.dylib$
+Trying pattern boost_program_options-mt.dylib$
+Found boost lib libboost_program_options-mt.dylib
+Trying pattern boost_thread(-xgcc[0-9]{0,3})-mt-1_59.dylib$
+Trying pattern boost_thread-mt-1_59.dylib$
+Trying pattern boost_thread(-xgcc[0-9]{0,3})-mt.dylib$
+Trying pattern boost_thread-mt.dylib$
+Found boost lib libboost_thread-mt.dylib
+Trying pattern boost_log(-xgcc[0-9]{0,3})-mt-1_59.dylib$
+Trying pattern boost_log-mt-1_59.dylib$
+Trying pattern boost_log(-xgcc[0-9]{0,3})-mt.dylib$
+Trying pattern boost_log-mt.dylib$
+Found boost lib libboost_log-mt.dylib
+Trying pattern boost_log_setup(-xgcc[0-9]{0,3})-mt-1_59.dylib$
+Trying pattern boost_log_setup-mt-1_59.dylib$
+Trying pattern boost_log_setup(-xgcc[0-9]{0,3})-mt.dylib$
+Trying pattern boost_log_setup-mt.dylib$
+Found boost lib libboost_log_setup-mt.dylib
+ok
+-------------------------------------------------
+Checking the flags needed to use pthreads
+==>
+
+#include <pthread.h>
+static void* f(void*) { return 0; }
+int main() {
+	pthread_t th;
+	pthread_attr_t attr;
+	pthread_attr_init(&attr);
+	pthread_create(&th, &attr, &f, 0);
+	pthread_join(th, 0);
+	pthread_cleanup_push(0, 0);
+	pthread_cleanup_pop(0);
+	pthread_attr_destroy(&attr);
+}
+
+<==
+[1/2] Compiling [32mbuild/.conf_check_2f1dfca32ef51808058200c67ade4a36/test.cpp[0m
+
+['/usr/bin/clang++', '-O2', '-g', '-pedantic', '-Wall', '-Wextra', '-Wno-unused-parameter', '-fcolor-diagnostics', '-Wno-unused-local-typedef', '-std=c++11', '-stdlib=libc++', '-I/opt/local/include', '-DNDEBUG', '-DHAVE_IS_MOVE_CONSTRUCTIBLE=1', '-DHAVE_LIBRESOLV=1', '-DHAVE_PRIVILEGE_DROP_AND_ELEVATE=1', '-DHAVE_IFADDRS_H=1', '../test.cpp', '-c', '-o', '/Users/Mocca/Desktop/NFD/build/.conf_check_2f1dfca32ef51808058200c67ade4a36/testbuild/test.cpp.1.o']
+[2/2] Linking [33mbuild/.conf_check_2f1dfca32ef51808058200c67ade4a36/testbuild/testprog[0m
+
+['/usr/bin/clang++', '-stdlib=libc++', 'test.cpp.1.o', '-o', '/Users/Mocca/Desktop/NFD/build/.conf_check_2f1dfca32ef51808058200c67ade4a36/testbuild/testprog', '-L/opt/local/lib', '-L/opt/local/lib', '-lboost_system-mt', '-lboost_chrono-mt', '-lboost_program_options-mt', '-lboost_thread-mt', '-lboost_log-mt', '-lboost_log_setup-mt']
+-------------------------------------------------
+Checking for boost linkage
+==>
+
+#include <boost/system/error_code.hpp>
+int main() { boost::system::error_code c; }
+
+<==
+[1/2] Compiling [32mbuild/.conf_check_9bde61f68d6652da708f4bb65feb0f1f/test.cpp[0m
+
+['/usr/bin/clang++', '-O2', '-g', '-pedantic', '-Wall', '-Wextra', '-Wno-unused-parameter', '-fcolor-diagnostics', '-Wno-unused-local-typedef', '-std=c++11', '-stdlib=libc++', '-I/opt/local/include', '-DNDEBUG', '-DHAVE_IS_MOVE_CONSTRUCTIBLE=1', '-DHAVE_LIBRESOLV=1', '-DHAVE_PRIVILEGE_DROP_AND_ELEVATE=1', '-DHAVE_IFADDRS_H=1', '../test.cpp', '-c', '-o', '/Users/Mocca/Desktop/NFD/build/.conf_check_9bde61f68d6652da708f4bb65feb0f1f/testbuild/test.cpp.1.o']
+[2/2] Linking [33mbuild/.conf_check_9bde61f68d6652da708f4bb65feb0f1f/testbuild/testprog[0m
+
+['/usr/bin/clang++', '-stdlib=libc++', 'test.cpp.1.o', '-o', '/Users/Mocca/Desktop/NFD/build/.conf_check_9bde61f68d6652da708f4bb65feb0f1f/testbuild/testprog', '-L/opt/local/lib', '-L/opt/local/lib', '-lboost_system-mt', '-lboost_chrono-mt', '-lboost_program_options-mt', '-lboost_thread-mt', '-lboost_log-mt', '-lboost_log_setup-mt']
+==>
+
+#include <boost/thread.hpp>
+int main() { boost::thread t; }
+
+<==
+[1/2] Compiling [32mbuild/.conf_check_9d0b7355ba195ccd93d9e1bc8a3a227b/test.cpp[0m
+
+['/usr/bin/clang++', '-O2', '-g', '-pedantic', '-Wall', '-Wextra', '-Wno-unused-parameter', '-fcolor-diagnostics', '-Wno-unused-local-typedef', '-std=c++11', '-stdlib=libc++', '-I/opt/local/include', '-DNDEBUG', '-DHAVE_IS_MOVE_CONSTRUCTIBLE=1', '-DHAVE_LIBRESOLV=1', '-DHAVE_PRIVILEGE_DROP_AND_ELEVATE=1', '-DHAVE_IFADDRS_H=1', '../test.cpp', '-c', '-o', '/Users/Mocca/Desktop/NFD/build/.conf_check_9d0b7355ba195ccd93d9e1bc8a3a227b/testbuild/test.cpp.1.o']
+[2/2] Linking [33mbuild/.conf_check_9d0b7355ba195ccd93d9e1bc8a3a227b/testbuild/testprog[0m
+
+['/usr/bin/clang++', '-stdlib=libc++', 'test.cpp.1.o', '-o', '/Users/Mocca/Desktop/NFD/build/.conf_check_9d0b7355ba195ccd93d9e1bc8a3a227b/testbuild/testprog', '-L/opt/local/lib', '-L/opt/local/lib', '-lboost_system-mt', '-lboost_chrono-mt', '-lboost_program_options-mt', '-lboost_thread-mt', '-lboost_log-mt', '-lboost_log_setup-mt']
+==>
+
+#include <boost/log/trivial.hpp>
+#include <boost/log/utility/setup/console.hpp>
+#include <boost/log/utility/setup/common_attributes.hpp>
+int main() {
+	using namespace boost::log;
+	add_common_attributes();
+	add_console_log(std::clog, keywords::format = "%Message%");
+	BOOST_LOG_TRIVIAL(debug) << "log is working" << std::endl;
+}
+
+<==
+[1/2] Compiling [32mbuild/.conf_check_3b193c56daacf4d04acd080240ccf6ab/test.cpp[0m
+
+['/usr/bin/clang++', '-O2', '-g', '-pedantic', '-Wall', '-Wextra', '-Wno-unused-parameter', '-fcolor-diagnostics', '-Wno-unused-local-typedef', '-std=c++11', '-stdlib=libc++', '-I/opt/local/include', '-DNDEBUG', '-DHAVE_IS_MOVE_CONSTRUCTIBLE=1', '-DHAVE_LIBRESOLV=1', '-DHAVE_PRIVILEGE_DROP_AND_ELEVATE=1', '-DHAVE_IFADDRS_H=1', '-DBOOST_LOG_DYN_LINK', '../test.cpp', '-c', '-o', '/Users/Mocca/Desktop/NFD/build/.conf_check_3b193c56daacf4d04acd080240ccf6ab/testbuild/test.cpp.1.o']
+[2/2] Linking [33mbuild/.conf_check_3b193c56daacf4d04acd080240ccf6ab/testbuild/testprog[0m
+
+['/usr/bin/clang++', '-stdlib=libc++', 'test.cpp.1.o', '-o', '/Users/Mocca/Desktop/NFD/build/.conf_check_3b193c56daacf4d04acd080240ccf6ab/testbuild/testprog', '-L/opt/local/lib', '-L/opt/local/lib', '-lboost_system-mt', '-lboost_chrono-mt', '-lboost_program_options-mt', '-lboost_thread-mt', '-lboost_log-mt', '-lboost_log_setup-mt']
+ok
+-------------------------------------------------
+Checking if Unix sockets are supported
+==>
+
+#include <boost/asio.hpp>
+#ifndef BOOST_ASIO_HAS_LOCAL_SOCKETS
+#error "Unix sockets are not available on this platform"
+#endif
+
+<==
+[1/1] Compiling [32mbuild/.conf_check_2c9c83d15f55c45d80db25cb588ea697/test.cpp[0m
+
+['/usr/bin/clang++', '-O2', '-g', '-pedantic', '-Wall', '-Wextra', '-Wno-unused-parameter', '-fcolor-diagnostics', '-Wno-unused-local-typedef', '-std=c++11', '-stdlib=libc++', '-I/opt/local/include', '-DNDEBUG', '-DHAVE_IS_MOVE_CONSTRUCTIBLE=1', '-DHAVE_LIBRESOLV=1', '-DHAVE_PRIVILEGE_DROP_AND_ELEVATE=1', '-DHAVE_IFADDRS_H=1', '-DBOOST_LOG_DYN_LINK', '../test.cpp', '-c', '-o', '/Users/Mocca/Desktop/NFD/build/.conf_check_2c9c83d15f55c45d80db25cb588ea697/testbuild/test.cpp.1.o']
+yes
+-------------------------------------------------
+Checking for WebSocket includes
+0.7.0
+-------------------------------------------------
+Checking if Ethernet face support can be enabled
+==>
+
+#include <boost/asio.hpp>
+#if defined(BOOST_ASIO_HAS_KQUEUE) and BOOST_VERSION == 105600
+#error "Ethernet face support cannot be enabled on this platform with boost 1.56"
+#endif
+
+<==
+[1/1] Compiling [32mbuild/.conf_check_f5902bd43387d421ff85fb2340600e4f/test.cpp[0m
+
+['/usr/bin/clang++', '-O2', '-g', '-pedantic', '-Wall', '-Wextra', '-Wno-unused-parameter', '-fcolor-diagnostics', '-Wno-unused-local-typedef', '-std=c++11', '-stdlib=libc++', '-I/opt/local/include', '-DNDEBUG', '-DHAVE_IS_MOVE_CONSTRUCTIBLE=1', '-DHAVE_LIBRESOLV=1', '-DHAVE_PRIVILEGE_DROP_AND_ELEVATE=1', '-DHAVE_IFADDRS_H=1', '-DHAVE_UNIX_SOCKETS=1', '-DHAVE_WEBSOCKET=1', '-D_WEBSOCKETPP_CPP11_STL_=1', '-DBOOST_LOG_DYN_LINK', '../test.cpp', '-c', '-o', '/Users/Mocca/Desktop/NFD/build/.conf_check_f5902bd43387d421ff85fb2340600e4f/testbuild/test.cpp.1.o']
+yes
+-------------------------------------------------
+Checking for libpcap library
+==>
+
+int main(int argc, char **argv) {
+	(void)argc; (void)argv;
+	return 0;
+}
+
+<==
+[1/2] Compiling [32mbuild/.conf_check_5521aba2bcbda1324db1254c9a73892a/test.cpp[0m
+
+['/usr/bin/clang++', '-O2', '-g', '-pedantic', '-Wall', '-Wextra', '-Wno-unused-parameter', '-fcolor-diagnostics', '-Wno-unused-local-typedef', '-std=c++11', '-stdlib=libc++', '-DNDEBUG', '-DHAVE_IS_MOVE_CONSTRUCTIBLE=1', '-DHAVE_LIBRESOLV=1', '-DHAVE_PRIVILEGE_DROP_AND_ELEVATE=1', '-DHAVE_IFADDRS_H=1', '-DHAVE_UNIX_SOCKETS=1', '-DHAVE_WEBSOCKET=1', '-D_WEBSOCKETPP_CPP11_STL_=1', '-DHAVE_ASIO_PCAP_SUPPORT=1', '../test.cpp', '-c', '-o', '/Users/Mocca/Desktop/NFD/build/.conf_check_5521aba2bcbda1324db1254c9a73892a/testbuild/test.cpp.1.o']
+[2/2] Linking [33mbuild/.conf_check_5521aba2bcbda1324db1254c9a73892a/testbuild/testprog[0m
+
+['/usr/bin/clang++', '-stdlib=libc++', 'test.cpp.1.o', '-o', '/Users/Mocca/Desktop/NFD/build/.conf_check_5521aba2bcbda1324db1254c9a73892a/testbuild/testprog', '-lpcap']
+yes
+-------------------------------------------------
+Checking for function pcap_set_immediate_mode
+==>
+#include <pcap/pcap.h>
+
+int main(int argc, char **argv) {
+	void *p;
+	(void)argc; (void)argv;
+	p=(void*)(pcap_set_immediate_mode);
+	((void)(p));
+	return 0;
+}
+
+<==
+[1/2] Compiling [32mbuild/.conf_check_5e8fa7e6124833c4319c660551ed6c78/test.cpp[0m
+
+['/usr/bin/clang++', '-O2', '-g', '-pedantic', '-Wall', '-Wextra', '-Wno-unused-parameter', '-fcolor-diagnostics', '-Wno-unused-local-typedef', '-std=c++11', '-stdlib=libc++', '-Wno-error', '-DNDEBUG', '-DHAVE_IS_MOVE_CONSTRUCTIBLE=1', '-DHAVE_LIBRESOLV=1', '-DHAVE_PRIVILEGE_DROP_AND_ELEVATE=1', '-DHAVE_IFADDRS_H=1', '-DHAVE_UNIX_SOCKETS=1', '-DHAVE_WEBSOCKET=1', '-D_WEBSOCKETPP_CPP11_STL_=1', '-DHAVE_ASIO_PCAP_SUPPORT=1', '-DHAVE_LIBPCAP=1', '../test.cpp', '-c', '-o', '/Users/Mocca/Desktop/NFD/build/.conf_check_5e8fa7e6124833c4319c660551ed6c78/testbuild/test.cpp.1.o']
+[2/2] Linking [33mbuild/.conf_check_5e8fa7e6124833c4319c660551ed6c78/testbuild/testprog[0m
+
+['/usr/bin/clang++', '-stdlib=libc++', 'test.cpp.1.o', '-o', '/Users/Mocca/Desktop/NFD/build/.conf_check_5e8fa7e6124833c4319c660551ed6c78/testbuild/testprog', '-lpcap']
+yes

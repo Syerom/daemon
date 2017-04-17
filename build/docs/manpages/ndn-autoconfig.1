@@ -1,0 +1,198 @@
+.\" Man page generated from reStructuredText.
+.
+.TH "NDN-AUTOCONFIG" "1" "Apr 15, 2017" "0.5.1-62-g38c7d9e" "NFD - Named Data Networking Forwarding Daemon"
+.SH NAME
+ndn-autoconfig \- NDN auto-configuration client
+.
+.nr rst2man-indent-level 0
+.
+.de1 rstReportMargin
+\\$1 \\n[an-margin]
+level \\n[rst2man-indent-level]
+level margin: \\n[rst2man-indent\\n[rst2man-indent-level]]
+-
+\\n[rst2man-indent0]
+\\n[rst2man-indent1]
+\\n[rst2man-indent2]
+..
+.de1 INDENT
+.\" .rstReportMargin pre:
+. RS \\$1
+. nr rst2man-indent\\n[rst2man-indent-level] \\n[an-margin]
+. nr rst2man-indent-level +1
+.\" .rstReportMargin post:
+..
+.de UNINDENT
+. RE
+.\" indent \\n[an-margin]
+.\" old: \\n[rst2man-indent\\n[rst2man-indent-level]]
+.nr rst2man-indent-level -1
+.\" new: \\n[rst2man-indent\\n[rst2man-indent-level]]
+.in \\n[rst2man-indent\\n[rst2man-indent-level]]u
+..
+.SH USAGE
+.INDENT 0.0
+.INDENT 3.5
+.sp
+.nf
+.ft C
+ndn\-autoconfig [options]
+.ft P
+.fi
+.UNINDENT
+.UNINDENT
+.SH DESCRIPTION
+.sp
+Client tool to run \fI\%NDN hub discovery procedure\fP\&.
+.SH OPTIONS
+.INDENT 0.0
+.TP
+.B \fB\-h\fP or \fB\-\-help\fP
+Print usage information.
+.TP
+.B \fB\-d\fP or \fB\-\-daemon\fP
+Run ndn\-autoconfig in daemon mode, detecting network change events and re\-running
+auto\-discovery procedure.  In addition, the auto\-discovery procedure is unconditionally
+re\-run every hour.
+.sp
+NOTE: if connection to NFD fails, the daemon will be terminated.
+.TP
+.B \fB\-c [FILE]\fP or \fB\-\-config=[FILE]\fP
+Use the specified configuration file. If \fIenabled = true\fP is not specified in the
+configuration file, no actions will be performed.
+.TP
+.B \fB\-\-ndn\-fch\-url=[URL]\fP
+Use the specified URL to find the closest hub (NDN\-FCH protocol).  If not specified,
+\fBhttp://ndn\-fch.named\-data.net\fP will be used.  Only \fBhttp://\fP URLs are supported.
+.TP
+.B \fB\-V\fP or \fB\-\-version\fP
+Print version information.
+.UNINDENT
+.SH NDN HUB DISCOVERY PROCEDURE
+.sp
+When an end host starts up, or detects a change in its network environment, it MAY use
+this procedure to discover a local or home NDN router, in order to gain connectivity to
+\fI\%the NDN research testbed\fP\&.
+.SS Overview
+.sp
+This procedure contains four methods to discover a NDN router:
+.INDENT 0.0
+.IP 1. 3
+Look for a local NDN router by multicast.
+This is useful in a home or small office network.
+.IP 2. 3
+Look for a local NDN router by DNS query with default suffix.
+This allows network administrator to configure a NDN router in a large enterprise network.
+.IP 3. 3
+Find closest hub by sending an HTTP request to NDN\-FCH server.
+.IP 4. 3
+Connect to the home NDN router according to user certificate.
+This ensures connectivity from anywhere.
+.UNINDENT
+.sp
+After connecting to an NDN router, two prefixes will be automatically registered:
+.INDENT 0.0
+.IP \(bu 2
+\fB/ndn\fP
+.IP \(bu 2
+\fB/localhop/nfd\fP \-\-\- this to inform RIB manager that there is connectivity to the hub
+.UNINDENT
+.SS Stage 1: multicast discovery
+.SS Request
+.sp
+The end host sends an Interest over a multicast face.
+.sp
+Interest Name is \fB/localhop/ndn\-autoconf/hub\fP\&.
+.SS Response
+.sp
+A producer app on the HUB answer this Interest with a Data packet that contains a
+TLV\-encoded \fIUri\fP block.  The value of this block is the URI for the HUB, preferrably a
+UDP tunnel.
+.SS Stage 2: DNS query with default suffix
+.SS Request
+.sp
+The end host sends a DNS query that is equivalent to this command:
+.INDENT 0.0
+.INDENT 3.5
+.sp
+.nf
+.ft C
+dig +search +short +cmd +tries=2 +ndots=10 _ndn._udp srv
+.ft P
+.fi
+.UNINDENT
+.UNINDENT
+.SS Response
+.sp
+The DNS server should answer with an SRV record that contains the hostname and UDP port
+number of the NDN router.
+.SS Stage 3: HTTP Request to NDN\-FCH server
+.sp
+This stage uses a simple HTTP\-based API.  For more information about NDN\-FCH server, refer
+to the \fI\%NDN\-FCH README file\fP\&.
+.SS Request
+.sp
+HTTP/1.0 request for the NDN\-FCH server URI (\fBhttp://ndn\-fch.named\-data.net\fP by default)
+.SS Response
+.sp
+The HTTP response is expected to be a hostname or an IP address of the closest hub,
+inferred using IP\-geo approximation service.
+.SS Stage 4: find home router
+.sp
+This stage assumes that user has configured default certificate using
+\fI\%https://ndncert.named\-data.net/\fP as described in \fI\%Certification Architecture\fP\&.
+.SS Request
+.sp
+The end host loads the default user identity (eg. \fB/ndn/edu/ucla/cs/afanasev\fP), and
+converts it to DNS format.
+.sp
+The end host sends a DNS query for an SRV record of name \fB_ndn._udp.\fP + user identity in
+DNS format + \fB_homehub._autoconf.named\-data.net\fP\&. For example:
+.INDENT 0.0
+.INDENT 3.5
+.sp
+.nf
+.ft C
+_ndn._udp.afanasev.cs.ucla.edu.ndn._homehub._autoconf.named\-data.net
+.ft P
+.fi
+.UNINDENT
+.UNINDENT
+.SS Response
+.sp
+The DNS server should answer with an SRV record that contains the hostname and UDP port
+number of the home NDN router of this user\(aqs site.
+.SH CLIENT PROCEDURE
+.SS Stage 1
+.sp
+Send a multicast discovery Interest.
+.sp
+If this Interest is answered, connect to the HUB and terminate auto\-discovery.
+.SS Stage 2
+.sp
+Send a DNS query with default suffix.
+.sp
+If this query is answered, connect to the HUB and terminate auto\-discovery.
+.SS Stage 3
+.sp
+Send HTTP request to NDN\-FCH server.
+.sp
+If request succeeds, attempt to connect to the discovered HUB and terminate
+auto\-discovery.
+.SS Stage 4
+.INDENT 0.0
+.IP \(bu 2
+Load default user identity, and convert it to DNS format; if either fails, the
+auto\-discovery fails.
+.IP \(bu 2
+Send a DNS query to find home HUB.
+If this query is answered, connect to the home HUB and terminate auto\-discovery.
+Otherwise, the auto\-discovery fails.
+.UNINDENT
+.SH SEE ALSO
+.sp
+ndn\-autoconfig\-server, ndn\-autoconfig.conf
+.SH COPYRIGHT
+2014-2016, Named Data Networking Project
+.\" Generated by docutils manpage writer.
+.
