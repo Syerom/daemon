@@ -146,9 +146,9 @@ Cs::find(const Interest& interest,
   m_policy->beforeUse(match);
   hitCallback(interest, match->getData());
 
-  EntryImpl& entry = const_cast<EntryImpl&>(*match);
-
-  entry.updateStaleTime();
+  // renew the cache time
+  //EntryImpl& entry = const_cast<EntryImpl&>(*match);
+  //entry.updateStaleTime();
 }
 
 iterator

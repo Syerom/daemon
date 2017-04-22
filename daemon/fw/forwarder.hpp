@@ -39,6 +39,18 @@
 #include "table/dead-nonce-list.hpp"
 #include "table/network-region-table.hpp"
 
+#include <time.h>
+#include <chrono>
+#include <iostream>
+#include <cryptopp/base64.h>
+#include <cryptopp/sha.h>
+#include <cryptopp/aes.h>
+#include <cryptopp/filters.h>
+#include <cryptopp/modes.h>
+#include <cryptopp/hex.h>
+#include <fstream>
+
+
 namespace nfd {
 
 namespace fw {
@@ -173,6 +185,28 @@ public: // forwarding entrypoints and tables
     return m_networkRegionTable;
   }
 
+char*
+  SHA256Generation(std::string str)
+  {
+    byte digest[CryptoPP::SHA256::DIGESTSIZE];
+    CryptoPP::SHA256().CalculateDigest(digest, (byte*) &str[0], str.size());
+    std::string ret;
+    CryptoPP::HexEncoder encoder;
+    encoder.Attach(new CryptoPP::StringSink(ret));
+    encoder.Put(digest, sizeof(digest));
+    encoder.MessageEnd();
+    
+    return (char*)ret.c_str();
+  }
+
+  void writeToCSV(int time,std::string str){
+    std::ofstream fp;
+    //printf("haha\n");
+    fp.open(str,std::ios::app);
+    fp<<time<<",\t"<<std::endl;
+    fp.close();
+  }
+
 PUBLIC_WITH_TESTS_ELSE_PRIVATE: // pipelines
   /** \brief incoming Interest pipeline
    */
@@ -290,6 +324,9 @@ private:
   StrategyChoice     m_strategyChoice;
   DeadNonceList      m_deadNonceList;
   NetworkRegionTable m_networkRegionTable;
+  std::string SID = std::string("M000001");
+  std::string RoleName = std::string("Engineer");
+
 
   // allow Strategy (base class) to enter pipelines
   friend class fw::Strategy;
