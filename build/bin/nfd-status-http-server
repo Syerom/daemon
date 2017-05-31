@@ -143,7 +143,7 @@ def httpServer():
     args = vars(parser.parse_args())
 
     if args['version']:
-        print "0.5.1-commit-f939937"
+        print "0.5.1-commit-2e89440"
         return
 
     localPort = args["port"]

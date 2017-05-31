@@ -247,29 +247,32 @@ Forwarder::onContentStoreHit(const Face& inFace, const shared_ptr<pit::Entry>& p
   NFD_LOG_DEBUG("onContentStoreHit interest=" << interest.getName());
     std::string hashValidation ;
 
-    // MHT left child
-    // Nameing prefix
-    std::string str1=std::string(this->SHA256Generation(std::string("/A/testApp"))).substr(0,32);
-    // File name
-    std::string str2=std::string(this->SHA256Generation(std::string("/file.pdf"))).substr(0,32);
-    // MHT right child
-    // Role name
-    std::string str3=std::string(this->SHA256Generation(std::string(interest.getRoleName()))).substr(0,32);
-    // Attribute
-    std::string str4=std::string(this->SHA256Generation(std::string("permissionsalarydeployment"))).substr(0,32);
-    // MHT computation
-    //std::chrono::steady_clock::time_point startTime = std::chrono::steady_clock::now();
+    // // MHT left child
+    // // Nameing prefix
+    // std::string str1=std::string(this->SHA256Generation(std::string("/A/testApp"))).substr(0,32);
+    // // File name
+    // std::string str2=std::string(this->SHA256Generation(std::string("/file.pdf"))).substr(0,32);
+    // // MHT right child
+    // // Role name
+    // std::string str3=std::string(this->SHA256Generation(std::string(interest.getRoleName()))).substr(0,32);
+    // // Attribute
+    // std::string str4=std::string(this->SHA256Generation(std::string("permissionsalarydeployment"))).substr(0,32);
+    // // MHT computation
+    // //std::chrono::steady_clock::time_point startTime = std::chrono::steady_clock::now();
 
-    std::string str5=std::string(this->SHA256Generation(str1.append(str2))).substr(0,32);
-    std::string str6=std::string(this->SHA256Generation(str3.append(str4))).substr(0,32);
-    // A token
-    std::string Atoken = std::string(this->SHA256Generation("M0419169MASTERKEY")).substr(0,32);
-    // hashvalidation
-    hashValidation = std::string(this->SHA256Generation(str5.append(str6))).substr(0,32);
+    // std::string str5=std::string(this->SHA256Generation(str1.append(str2))).substr(0,32);
+    // std::string str6=std::string(this->SHA256Generation(str3.append(str4))).substr(0,32);
+    // // A token
+    // std::string Atoken = std::string(this->SHA256Generation("M0419169MASTERKEY")).substr(0,32);
+    // // hashvalidation
+    // hashValidation = std::string(this->SHA256Generation(str5.append(str6))).substr(0,32);
+
+    std::string r = "10";
+    hashValidation = std::string(this->SHA256Generation(r.append("Engineer").append("M0419169MASTERKEY"))).substr(0,32);
 
     std::ostringstream os;
     os<< interest.getNonce();
-    hashValidation=std::string(this->SHA256Generation(Atoken.append(hashValidation).append(os.str()))).substr(0,32);
+    hashValidation=std::string(this->SHA256Generation(hashValidation.append(os.str()))).substr(0,32);
     os.str()="";
     os.clear();
 
